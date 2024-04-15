@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "bl": "^6.0.12"
+    "bl": "^6.0.12",
+    "express": "^4.19.2"
   }
 }
