@@ -1,0 +1,17 @@
+{
+  "name": "zli-m295",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gauyex-bzz/ZLI-M295.git"
+  },
+  "private": true,
+  "dependencies": {
+    "bl": "^6.0.12"
+  }
+}
