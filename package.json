@@ -13,6 +13,7 @@
   "private": true,
   "dependencies": {
     "bl": "^6.0.12",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "request": "^2.88.2"
   }
 }
