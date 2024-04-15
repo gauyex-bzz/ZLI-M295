@@ -12,7 +12,6 @@ function leseDateiInhalt(filepath) {
     });
 }
 
-// Beispielaufruf
 leseDateiInhalt('textfile.txt')
     .then(inhalt => {
         console.log('Die Länge des Dateiinhalts beträgt:', inhalt.length);
