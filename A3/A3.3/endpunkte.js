@@ -6,8 +6,7 @@ const app = express();
 const port = 3000;
 
 app.get('/now', (req, res) => {
-  const currentTime = new Date().toLocaleTimeString();
-  res.send(`Aktuelle Zeit: ${currentTime}`);
+  res.send(new Date().toLocaleTimeString());
 });
 
 app.get('/zli', (req, res) => {
@@ -17,14 +16,11 @@ app.get('/zli', (req, res) => {
 const names = ['Max', 'Emma', 'Liam', 'Sophia', 'Noah', 'Olivia', 'Ethan', 'Ava', 'William', 'Isabella', 'James', 'Mia', 'Benjamin', 'Charlotte', 'Mason', 'Amelia', 'Michael', 'Harper', 'Alexander', 'Evelyn'];
 
 app.get('/name', (req, res) => {
-  const randomName = names[Math.floor(Math.random() * names.length)];
-  res.send(`${randomName}`);
+  res.send(names[Math.floor(Math.random() * names.length)]);
 });
 
 app.get('/html', (req, res) => {
-  const htmlFilePath = path.join(__dirname, 'static', 'index.html');
-  const htmlContent = fs.readFileSync(htmlFilePath, 'utf8');
-  res.type('text/html').send(htmlContent);
+  res.type('text/html').send(fs.readFileSync('C:/Users/xavier/WebstormProjects/ZLI-M295/A3/A3.3/static/index.html', 'utf8'));
 });
 
 app.get('/image', (req, res) => {
@@ -44,9 +40,7 @@ app.get('/secret', (req, res) => {
 });
 
 app.get('/xml', (req, res) => {
-  const xmlFilePath = path.join(__dirname, 'static', 'data.xml');
-  const xmlContent = fs.readFileSync(xmlFilePath, 'utf8');
-  res.type('text/xml').send(xmlContent);
+  res.type('text/xml').send(fs.readFileSync('C://Users/xavier//WebstormProjects//ZLI-M295//A3//A3.3//static//data.xml', 'utf8'));
 });
 
 app.get('/me', (req, res) => {
