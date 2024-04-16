@@ -1,0 +1,5 @@
+Hoppscotch ist ein Tool zum Senden von HTTP-Anfragen an verschiedene Endpunkte.
+Sie können HTTP-Anfragen mit verschiedenen Methoden wie GET, POST, PUT, DELETE usw.
+senden und die Antworten anzeigen. Es ermöglicht auch die Konfiguration von Headern,
+Authentifizierungsinformationen und bietet Optionen zur Anpassung der Benutzeroberfläche.
+Hoppscotch erlaubt das Speichern von Anfragen als Sammlungen, um sie später wieder aufzurufen.
