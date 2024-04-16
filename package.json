@@ -13,7 +13,10 @@
   "private": true,
   "dependencies": {
     "bl": "^6.0.12",
+    "body-parser": "^1.20.2",
     "express": "^4.19.2",
+    "moment-timezone": "^0.5.45",
+    "node-fetch": "^3.3.2",
     "request": "^2.88.2"
   }
 }
