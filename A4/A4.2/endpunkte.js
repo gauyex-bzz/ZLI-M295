@@ -25,7 +25,7 @@ app.delete('/names',  (req, res) => {
     const index = namelist.indexOf(rm);
 
     if (index === -1) {
-        res.status(404).send("Se fucking name dos nod egsist????```;MJNBHBGZGHHBJSjdjdfgincvojenndjnvvo")
+        res.status(404).send('Name not found');
     } else {
         namelist.splice(index, 1)
         res.status(200).send(namelist);
