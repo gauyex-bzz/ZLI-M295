@@ -1,5 +1,26 @@
-Hoppscotch ist ein Tool zum Senden von HTTP-Anfragen an verschiedene Endpunkte.
-Sie können HTTP-Anfragen mit verschiedenen Methoden wie GET, POST, PUT, DELETE usw.
-senden und die Antworten anzeigen. Es ermöglicht auch die Konfiguration von Headern,
-Authentifizierungsinformationen und bietet Optionen zur Anpassung der Benutzeroberfläche.
-Hoppscotch erlaubt das Speichern von Anfragen als Sammlungen, um sie später wieder aufzurufen.
+1.  Hoppscotch ist ein Tool zum Senden von HTTP-Anfragen an verschiedene Endpunkte.
+    Sie können HTTP-Anfragen mit verschiedenen Methoden wie GET, POST, PUT, DELETE usw.
+    senden und die Antworten anzeigen. Es ermöglicht auch die Konfiguration von Headern,
+    Authentifizierungsinformationen und bietet Optionen zur Anpassung der Benutzeroberfläche.
+    Hoppscotch erlaubt das Speichern von Anfragen als Sammlungen, um sie später wieder aufzurufen.
+
+2. Fragen Sie die Webseite Ihres Betriebs oder von https://www.zli.ch als HTML ab
+        https://www.zli.ch
+
+   Fragen Sie die Webseite Ihres Betriebs oder von https://www.zli.ch als so ab, dass ein HTTP Status 404 zurück gegeben wird
+        https://www.zli.ch/hallo
+
+   Fragen Sie ein Bild mit einem GET Request von https://picsum.photos ab
+        https://picsum.photos/200/300
+
+   Fragen Sie die Daten eines Pokémons von der https://pokeapi.co als JSON ab
+        https://pokeapi.co/api/v2/pokemon/raikou
+
+   Fragen Sie einen random Fact von https://cat-fact.herokuapp.com ab
+        https://pokeapi.co/api/v2/pokemon/raikou
+
+   Fragen Sie die Posts von https://jsonplaceholder.typicode.com als JSON ab
+        https://jsonplaceholder.typicode.com/posts
+
+   Erstellen Sie nun hier selbst einen neuen Post mit einem POST Request
+        https://app-prod-ws.meteoswiss-app.ch/v1/plzDetail?plz=863000
