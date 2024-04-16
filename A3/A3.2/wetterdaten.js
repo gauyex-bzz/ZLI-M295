@@ -39,3 +39,8 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Server läuft auf Port ${port}`);
 });
+
+
+// function getTemperature(plz) {
+//     fetch(`https://app-prod-ws.meteoswiss-app.ch/v1/plzDetail?plz=${plz}00`);
+// }
