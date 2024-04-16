@@ -28,8 +28,7 @@ app.get('/html', (req, res) => {
 });
 
 app.get('/image', (req, res) => {
-  const imagePath = path.join(__dirname, 'static', 'image.jpg');
-  res.sendFile(imagePath);
+  res.sendFile('C:/Users/xavier/WebstormProjects/ZLI-M295/A3/A3.3/static/image.jpg');
 });
 
 app.get('/teapot', (req, res) => {
@@ -37,8 +36,7 @@ app.get('/teapot', (req, res) => {
 });
 
 app.get('/user-agent', (req, res) => {
-  const userAgent = req.headers['user-agent'];
-  res.send(`Browser: ${userAgent}`);
+  res.send(req.headers['user-agent']);
 });
 
 app.get('/secret', (req, res) => {
