@@ -46,6 +46,30 @@ app.get('/secret2', (req, res) =>{
     }
 })
 
+app.get('/chuck', async (req, res) => {
+    const name =  req.query.name;
+    const joke = await fetch('https://api.chucknorris.io/jokes/random')
+    const json = await joke.json();
+
+    res.send(json.value.replace('Chuck Norris', name))
+})
+
+const about = {
+    vorname: 'Robert',
+    nachname: 'Häberli',
+    wohnort: 'Regensdorf',
+    alter: '21',
+    augenfarbe: 'Blau'
+}
+
+app.get('/me', (req, res) => {
+    res.send(about);
+})
+
+app.patch('/me', (req, res) => {
+    res.send({...about, ...req.body});
+})
+
 app.listen(port, () => {
     console.log(`Server läuft auf Port ${port}`)
 })
