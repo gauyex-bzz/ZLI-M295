@@ -47,9 +47,9 @@ app.get('/me', (req, res) => {
   const me = {
     Vorname: 'Sebastian',
     Nachname: 'Rüdiger',
-    Alter: 69,
+    Alter: 32,
     Wohnort: 'Ausserbühl',
-    Augenfarbe: 'Violett'
+    Augenfarbe: 'Grün'
   };
   res.json(me);
 });
