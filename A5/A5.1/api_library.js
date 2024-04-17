@@ -81,6 +81,21 @@ app.get('/books', (req, res) => {
         }
 })
 
+app.post('/books', (req, res) => {
+    const newbook = {
+        isbn: req.body.isbn,
+        title: req.body.title,
+        year: req.body.year,
+        author: req.body.author
+    }
+    if (isNaN(newbook.year)) {
+        res.status(400).send('Jahr muss eine Zahl sein');
+    } else {
+        books.push(newbook);
+        res.send(books);
+    }
+});
+
 app.listen(port, () => {
     console.log(`Server läuft auf Port ${port}`);
 });
