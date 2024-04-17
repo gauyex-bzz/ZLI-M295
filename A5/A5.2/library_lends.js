@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
-app.use(express.json());
+const cors = require('cors');
+app.use(cors()); // Use CORS middleware
+const swaggerUi = require('swagger-ui-express');
+const swaggerFile = require('../../A6/A6.2/swagger_output.json');
+app.use('/swagger-ui', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 const port = 3000;
 
 let books = [
