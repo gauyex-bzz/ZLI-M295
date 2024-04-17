@@ -17,6 +17,8 @@
     "express": "^4.19.2",
     "moment-timezone": "^0.5.45",
     "node-fetch": "^3.3.2",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.0"
   }
 }
