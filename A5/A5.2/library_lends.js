@@ -70,6 +70,38 @@ app.get('/lends', (req, res) => {
     res.send(lends)
 })
 
+app.get('/lends/:id', (req, res) => {
+    const lend = lends.find(lend => lend.id === parseInt(req.params.id));
+    if (!lend) return res.status(404).send('Ausleihe nicht gefunden.');
+    res.send(lend);
+});
+
+app.post('/lends', (req, res) => {
+    const { customer_id, isbn } = req.body;
+    const book = books.find(book => book.isbn === isbn);
+    if (!book) return res.status(404).send('Book not found.');
+
+    const openLends = lends.filter(lend => lend.customer_id === customer_id && !lend.returned_at);
+    if (openLends.length >= 3) return res.status(422).send('Customer already has three open lends.');
+
+    const existingLend = lends.find(lend => lend.isbn === isbn && lend.returned_at === undefined);
+    if (existingLend) return res.status(422).send('Book is already lent out.');
+
+    const lend = { id: lends.length + 1, customer_id, isbn, borrowed_at: new Date() };
+    lends.push(lend);
+    res.send(lend);
+});
+
+
+app.delete('/lends/:id', (req, res) => {
+    const lend = lends.find(lend => lend.id === parseInt(req.params.id));
+    if (!lend) return res.status(404).send('Lend not found.');
+    if (lend.returned_at) return res.status(422).send('Book has already been returned.');
+
+    lend.returned_at = new Date();
+    res.send(lend);
+});
+
 app.listen(port, () => {
     console.log(`Server läuft auf Port ${port}`);
 });
