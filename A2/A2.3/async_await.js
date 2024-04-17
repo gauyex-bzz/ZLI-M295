@@ -8,4 +8,5 @@ async function addiereNachVerzoegerung(a, b, ms) {
     console.log(`Das Ergebnis ist: ${ergebnis}`);
 }
 
-addiereNachVerzoegerung(3, 7, 2000); //addiert nach 2 Sekunden 3 und 7 und gibt die Summe aus
+addiereNachVerzoegerung(3, 7, 2000);
+//addiert nach 2 Sekunden 3 und 7 und gibt die Summe aus

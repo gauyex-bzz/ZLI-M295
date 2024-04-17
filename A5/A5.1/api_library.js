@@ -54,7 +54,7 @@ const books = [
         author: 'J.R.R. Tolkien'
     },
     {
-        isbn: '978-0-345-33971-7',
+        isbn: '1234',
         title: '1984',
         year: 1949,
         author: 'George Orwell'
@@ -92,6 +92,25 @@ app.post('/books', (req, res) => {
         res.status(400).send('Jahr muss eine Zahl sein');
     } else {
         books.push(newbook);
+        res.send(books);
+    }
+});
+
+app.put('/books/:isbn', (req, res) => {
+    const isbn = req.params.isbn
+    const newbook = req.body;
+
+    const bookindex = books.findIndex(book => book.isbn === isbn);
+
+    if (bookindex === -1) {
+        res.status(404).send('Buch nicht gefunden');
+    } else {
+        books[bookindex] = {
+            isbn: isbn,
+            title: newbook.title,
+            year: newbook.year,
+            author: newbook.author
+        };
         res.send(books);
     }
 });
