@@ -115,6 +115,20 @@ app.put('/books/:isbn', (req, res) => {
     }
 });
 
+app.delete('/books/:isbn', (req, res) => {
+    const isbn = req.params.isbn
+
+    const bookindex = books.findIndex(book => book.isbn === isbn);
+
+    if (bookindex === -1) {
+        res.status(404).send('Buch nicht gefunden');
+    } else {
+        books.splice(bookindex, 1);
+        }
+        res.send(books);
+
+});
+
 app.listen(port, () => {
     console.log(`Server läuft auf Port ${port}`);
 });
