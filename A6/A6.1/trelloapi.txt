@@ -1,0 +1,38 @@
+TrelloAPI
+
+1.  Welches sind die 3 wichtigsten Ressourcen der API?
+    - Boards
+    - Cards
+    - Lists
+
+2.  Welche Properties haben diese 3 Ressourcen? Wie sieht das JSON eines dieser Objekte aus?
+    Boards
+        - id
+        - name
+        - desc
+        - closed
+        - idOrganization
+    Cards
+        - id
+        - name
+        - desc
+        - closed
+        - idLis
+    Lists
+        - id
+        - name
+        - closed
+        - idBoard
+        - pos
+
+3.  Mit welchem Endpunkt kann man ein einzelnes dieser Objekte abholen?
+    Boards: GET /boards/{boardId}
+    Cards: GET /cards/{cardId}
+    Lists: GET /lists/{listId}
+
+4.  Was gibt es sonst noch wichtiges zu wissen zu dieser API? z.B. Authentifizierung o.Ä.
+    - Authentifizierung: Die Trello API erfordert eine Authentifizierung mittels API-Token und API-Key. Dies geschieht über OAuth 1.0a.
+    - Rate Limiting: Die API unterliegt einem Rate-Limiting, um die Server vor Überlastung zu schützen. Entwickler sollten die Anzahl
+      der Anfragen pro Zeiteinheit im Auge behalten.
+    - Dokumentation: Die offizielle Dokumentation der Trello API bietet detaillierte Informationen zu Endpunkten, Parametern und
+      Authentifizierung. Es ist ratsam, diese Dokumentation zu konsultieren, um die API effektiv zu nutzen.
