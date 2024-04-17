@@ -1,10 +1,9 @@
 const express = require('express');
-const {response} = require("express");
 const app = express();
 app.use(express.json());
 const port = 3000;
 
-const books = [
+let books = [
     {
         isbn: '978-3-86680-192-9',
         title: 'Harry Potter and the Philosopher\'s Stone',
@@ -82,12 +81,7 @@ app.get('/books', (req, res) => {
 })
 
 app.post('/books', (req, res) => {
-    const newbook = {
-        isbn: req.body.isbn,
-        title: req.body.title,
-        year: req.body.year,
-        author: req.body.author
-    }
+    const newbook = req.body
     if (isNaN(newbook.year)) {
         res.status(400).send('Jahr muss eine Zahl sein');
     } else {
@@ -126,7 +120,17 @@ app.delete('/books/:isbn', (req, res) => {
         books.splice(bookindex, 1);
         }
         res.send(books);
+})
 
+app.patch('/books/:isbn', (req, res) => {
+    books = books.map((book) => {
+        if(book.isbn === req.params.isbn) {
+            return{...book, ...req.body};
+        } else{
+            return book
+        }
+    })
+    res.json(books);
 });
 
 app.listen(port, () => {
