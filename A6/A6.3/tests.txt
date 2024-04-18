@@ -1,15 +1,15 @@
 Buch ohne Titel kann nicht erstellt werden
-    pm.test("Status code is 400", function () {
-        pm.response.to.have.status(400);
+    pw.test("Status code is 400", () => {
+        pw.expect(pw.response.status).toBe(400);
     });
 
 Nicht existierende Bücher können nicht ausgeliehen werden
-    pm.test("Status code is 404", function () {
-        pm.response.to.have.status(404);
+    pw.test("Status code is 404", () => {
+        pw.expect(pw.response.status).toBe(404);
     });
 
 Buch kann nicht 2 mal gleichzeitig ausgeliehen werden
-    pm.test("Status code is 422", function () {
-        pm.response.to.have.status(422);
+    pw.test("Status code is 422", () => {
+        pw.expect(pw.response.status).toBe(422);
     });
 
