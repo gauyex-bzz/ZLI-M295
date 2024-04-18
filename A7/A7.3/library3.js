@@ -146,7 +146,7 @@ app.get('/verify', (req, res) => {
 
 app.delete('/logout', (req, res) => {
     req.session.destroy();
-    res.status(204).send('Ausgeloggt.');
+    res.status(204).send();
 });
 
 app.listen(port, () => {
